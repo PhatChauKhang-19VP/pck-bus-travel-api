@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const sql = require("mssql");
-const { connect } = require("../utils/dbManager");
+const { connect, sql } = require("../utils/dbManager");
 
 /* GET users listing. */
 router.get("/", async (req, res, next) => {
