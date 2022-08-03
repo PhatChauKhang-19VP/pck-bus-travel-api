@@ -4,11 +4,14 @@ var router = express.Router();
 const usersRouter = require("./users");
 const toursRouter = require("./tours.route");
 const addressRouter = require("./address.route");
+const statisticRouter = require("./statistic.route");
+
 const { connect, sql } = require("../utils/dbManager");
 
 router.use("/users", usersRouter);
 router.use("/tours", toursRouter);
 router.use("/address", addressRouter);
+router.use("/statistic", statisticRouter);
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
