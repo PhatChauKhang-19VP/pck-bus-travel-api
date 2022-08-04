@@ -1,7 +1,7 @@
 const sqlConfig = {
 	user: "sa",
 	password: "1",
-	database: "pck_bus_travel1",
+	database: "travel",
 	server: "localhost",
 	port: 1433,
 	pool: {

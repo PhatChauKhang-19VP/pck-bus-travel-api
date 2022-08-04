@@ -77,6 +77,32 @@ router.post("/tim-tour", async (req, res, next) => {
 
 	const result = await sql.query(query);
 
+	console.log(result.recordset.length);
+
+	res.json(result.recordset);
+});
+
+router.get("/lich-trinh/:ma_tour", async (req, res, next) => {
+	await connect();
+
+	const query = `exec usp_get_lich_trinh '${req.params.ma_tour}'`;
+
+	console.log(query);
+
+	const result = await sql.query(query);
+
+	res.json(result.recordset);
+});
+
+router.get("/lo-trinh/:ma_tour", async (req, res, next) => {
+	await connect();
+
+	const query = `exec usp_get_lo_trinh '${req.params.ma_tour}'`;
+
+	console.log(query);
+
+	const result = await sql.query(query);
+
 	res.json(result.recordset);
 });
 module.exports = router;
